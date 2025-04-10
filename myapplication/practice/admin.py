@@ -4,3 +4,5 @@ from .models import Students,Teachers
 
 admin.site.register(Students)
 admin.site.register(Teachers)
+# admin.site.register(Exams)
+# admin.site.register(Exam1)

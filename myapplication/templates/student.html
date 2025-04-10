@@ -28,13 +28,13 @@ Math:{{i.math}}<br>
 
 
 
-<h3>Welcome to Student details page</h3>
+{% comment %} <h3>Welcome to Student details page</h3>
 <p>
-    Roll No:{{i.Roll_no}}<br>
-    Name:{{i.studentName}}<br>
-    Physics:{{i.physics}}<br>
-    Chem:{{i.chemistry}}<br>
-    Math:{{i.math}}<br>
+    Roll No:{{studObj.Roll_no}}<br>
+    Name:{{studObj.studentName}}<br>
+    Physics:{{studObj.physics}}<br>
+    Chem:{{studObj.chemistry}}<br>
+    Math:{{studObj.math}}<br>
 </p><br>
 <table>
     <style>
@@ -54,11 +54,48 @@ Math:{{i.math}}<br>
     </tr>
     {% for i in studObj %}
     <tr>
-        <td>{{studObj.Roll_no}}</td>
-        <td>{{studObj.studentName}}</td>
-        <td>{{studObj.physics}}</td>
-        <td>{{studObj.chemistry}}</td>
-        <td>{{studObj.math}}</td>
+        <td>{{i.Roll_no}}</td>
+        <td>{{i.studentName}}</td>
+        <td>{{i.physics}}</td>
+        <td>{{i.chemistry}}</td>
+        <td>{{i.math}}</td>
     </tr>
     {% endfor %}
-</table>
+</table> {% endcomment %}
+
+
+
+<h3>Welcome to Student Details Page</h3>
+
+{% if studObj %}
+    <table border="1" cellpadding="10" cellspacing="0" >
+        <thead>
+            <tr bgcolor="skyblue">
+                <th>Roll No</th>
+                <th>Name</th>
+                <th>Physics</th>
+                <th>Chemistry</th>
+                <th>Math</th>
+                <th>Total</th>
+                <th>Percentage</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in studObj %}
+            <tr bgcolor="yellow">
+                <td>{{ i.id }}</td>
+                <td>{{ i.name }}</td>
+                <td>{{ i.physics }}</td>
+                <td>{{ i.chemistry }}</td>
+                <td>{{ i.math }}</td>
+                <td>{{ i.total }}</td>
+                <td>{{ i.percent }}%</td>
+                <td>{{ i.status }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>No student records found.</p>
+{% endif %}

@@ -19,12 +19,9 @@ class Teachers(models.Model):
 
 
 
-#     from django.db import models
 
-# # Create your models here.
-# class Students(models.Model):
-#     Roll_no=models.models.IntegerField()
-#     studentName=models.name = models.CharField(max_length=100)
-#     physics=models.models.IntegerField()
-#     chemistry=models.models.IntegerField()
-#     math=models.models.IntegerField()
+
+
+
+
+ 

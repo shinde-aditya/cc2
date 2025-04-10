@@ -44,3 +44,43 @@ def studentData(request):
             }
     return render(request,'student.html',context)
 
+# def examData(request):
+#     examObj=Exam1.objects.all()
+#     context={
+#         'examObj':examObj,
+#             }
+#     return render(request,'exam_result.html',context)
+
+#--------------********************************-------------------******************----------------------------*********************---------------
+
+def studentData(request):
+    student_objects = Students.objects.all()
+
+    # Add extra data to each student object (can use a list of dicts)
+    processed_students = []
+
+    for s in student_objects:
+        total = s.physics + s.chemistry + s.math
+        percent = total / 3
+        # status = "Pass" if percent >= 40 else "Fail"
+        if percent>=40:
+            status="Pass"
+        else:
+            status="Fail"
+        processed_students.append({
+            'id': s.id,
+            'name': s.studentName,
+            'physics': s.physics,
+            'chemistry': s.chemistry,
+            'math': s.math,
+            'total': total,
+            'percent': round(percent, 2),
+            'status': status
+        })
+
+    context = {
+        'studObj': processed_students,
+    }
+    return render(request, 'Student.html', context)
+
+#----------------------*************************------------------------***************************----------------------********************

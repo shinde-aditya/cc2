@@ -27,7 +27,10 @@ urlpatterns = [
     # path('adition',views.salary,name='adition'),
     path('salary',views.sal,name='salary'),
     path('contact',views.con,name='contact'),
-    path('studentPage',views.studentData,name='studentPage')
+    # path('studentPage',views.studentData,name='studentPage'),
+    path('studentPage',views.studentData,name='studentPage'),
+ 
+    
 ]
 
 
