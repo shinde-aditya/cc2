@@ -1,8 +1,64 @@
+{% comment %} <h3>Welcome to Student details page</h3>
+{% for i in studObj %}<!---DTL-->
+<p>
+Roll No:{{i.Roll_no}}<br>
+Name:{{i.studentName}}<br>
+Physics:{{i.physics}}<br>
+Chem:{{i.chemistry}}<br>
+Math:{{i.math}}<br>
+</p>
+ 
+<table>
+<tr>
+<th>Roll No</th>
+<th>Name</th>
+<th>Physics</th>
+<th>Chem</th>
+<th>Math</th>
+</tr>
+<tr>
+<td>{{i.Roll_no}}</td>
+<td>{{i.Name}}</td>
+<td>{{i.Physics}}</td>
+<td>{{i.Chem}}</td>
+<td>{{i.Math}}</td>
+<tr>
+</table>
+{% endfor %} {% endcomment %}
+
+
+
 <h3>Welcome to Student details page</h3>
 <p>
-Roll No:{{studObj.Roll_no}}
-Name:{{studObj.studentName}}
-Physics:{{studObj.physics}}
-Chem:{{studObj.chemistry}}
-Math:{{studObj.math}}
-</p>
+    Roll No:{{i.Roll_no}}<br>
+    Name:{{i.studentName}}<br>
+    Physics:{{i.physics}}<br>
+    Chem:{{i.chemistry}}<br>
+    Math:{{i.math}}<br>
+</p><br>
+<table>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+    
+    <tr>
+        <th>Roll No</th>
+        <th>Name</th>
+        <th>Physics</th>
+        <th>Chem</th>
+        <th>Math</th>
+        
+    </tr>
+    {% for i in studObj %}
+    <tr>
+        <td>{{studObj.Roll_no}}</td>
+        <td>{{studObj.studentName}}</td>
+        <td>{{studObj.physics}}</td>
+        <td>{{studObj.chemistry}}</td>
+        <td>{{studObj.math}}</td>
+    </tr>
+    {% endfor %}
+</table>

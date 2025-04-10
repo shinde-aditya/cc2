@@ -31,8 +31,14 @@ def con(request):
     return render(request,'contact_info.html',{'name':name,'email':email,'subject':subject,'message':message})
 
 
+# def studentData(request):
+#     studObj=Students.objects.get(id=1)
+#     context={
+#         'studObj':studObj,
+#             }
+#     return render(request,'student.html',context)
 def studentData(request):
-    studObj=Students.objects.get(id=1)
+    studObj=Students.objects.all()
     context={
         'studObj':studObj,
             }
