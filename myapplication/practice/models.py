@@ -14,8 +14,24 @@ class Teachers(models.Model):
     teacher_name=models.CharField(max_length=100)
     teacher_mobile=models.IntegerField()
 
+class Contacts1(models.Model):
+    Name=models.CharField(max_length=100)
+    Email=models.CharField(max_length=100)
+    Subject=models.CharField(max_length=100)
+    Message=models.CharField(max_length=100)
 
 
+class Musician(models.Model):
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    instrument = models.CharField(max_length=100)
+
+
+class Album(models.Model):
+    artist = models.ForeignKey(Musician, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    release_date = models.DateField()
+    num_stars = models.IntegerField()
 
 
 

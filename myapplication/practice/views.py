@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Students
+from .models import Students,Contacts1
 
 # # Create your views here.
 def index(request):
@@ -27,6 +27,9 @@ def con(request):
     email=request.POST['email']
     subject=request.POST['subject']
     message=request.POST['message']
+    
+    saveObj=Contacts1(Name=name,Email=email,Subject=subject,Message=message)
+    saveObj.save()
 
     return render(request,'contact_info.html',{'name':name,'email':email,'subject':subject,'message':message})
 
@@ -84,3 +87,20 @@ def studentData(request):
     return render(request, 'Student.html', context)
 
 #----------------------*************************------------------------***************************----------------------********************
+
+
+def arithematicPage(request):
+    return render(request,'arithematic.html')
+
+def saveExamData(request):
+    if request.method=="POST":
+        rollNo=request.POST['rollno']
+        name=request.POST['name']
+        physics=request.POST['physics']
+        chemistry=request.POST['chemistry']
+        math=request.POST['maths']
+
+        saveObj=Students(Roll_no=rollNo,studentName=name,physics=physics,chemistry=chemistry,math=math)
+        saveObj.save()
+        context={'msg':'Data saved Successfully'}
+        return render(request,'arithematic.html',context)

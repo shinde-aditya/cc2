@@ -1,0 +1,16 @@
+<form action="{% url 'examData' %}" method="POST">
+    {% csrf_token %}
+    <label for="fname">Roll No:</label>
+    <input type="text" id="fname" name="rollno"><br>
+    <label for="lname">Enter student  name:</label>
+    <input type="text" id="lname" name="name"><br>
+    <label for="lname">Enter Physics  marks:</label> 
+    <input type="text" id="lname" name="physics"><br>
+    <label for="lname">Enter chemistry  marks:</label> 
+    <input type="text" id="lname" name="chemistry"><br>
+    <label for="lname">Enter maths  marks:</label> 
+    <input type="text" id="lname" name="maths"><br>
+    <input type="submit" value="Submit">
+  </form>
+
+  {{msg}}

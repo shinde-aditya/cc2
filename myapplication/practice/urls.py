@@ -29,6 +29,8 @@ urlpatterns = [
     path('contact',views.con,name='contact'),
     # path('studentPage',views.studentData,name='studentPage'),
     path('studentPage',views.studentData,name='studentPage'),
+    path('arithematicPatge',views.arithematicPage,name='arithematicPatge'),
+    path('examData',views.saveExamData,name='examData')
  
     
 ]
